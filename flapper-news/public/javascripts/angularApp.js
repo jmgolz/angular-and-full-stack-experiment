@@ -17,7 +17,7 @@ app.config([
 			url: '/home',
 			templateUrl: '/home.html',
 			controller: 'MainCtrl'
-		}).state('posts' {
+		}).state('posts', {
 			url: '/posts/{id}',
 			templateUrl: '/posts.html',
 			controller : 'PostsCtrl'	
@@ -28,7 +28,7 @@ app.config([
 
 app.controller('MainCtrl', [
 '$scope',
-'posts'
+'posts',
 function($scope, posts){
 
 $scope.posts = posts.posts;
@@ -66,7 +66,7 @@ $scope.incrementUpvotes = function(post){
 
 }]);
 
-app.controller('PostsCtrl', [$scope, $stateParams, posts, function($scope, $stateParams, posts){
+app.controller('PostsCtrl', ['$scope', '$stateParams', 'posts', function($scope, $stateParams, posts){
 	$scope.addComment = function(){
 		if($scope.body === ''){ return; }
 		$scope.post.comments.push({
