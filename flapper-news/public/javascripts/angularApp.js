@@ -66,11 +66,12 @@ $scope.incrementUpvotes = function(post){
 
 }]);
 
-app.controller('PostsCtrl', ['$scope', 'posts', 'post', function($scope, post, posts){
+app.controller('PostsCtrl', ['$scope', 'posts', 'post', function($scope, posts, post){
 	$scope.post = post;
+	$scope.test = "this on?";
 	
 	
-	$scope.addComment = function(){
+	posts.addComment = function(){
 		if($scope.body === ''){ return; }		
 		
 		posts.addcomment(post._id,{
