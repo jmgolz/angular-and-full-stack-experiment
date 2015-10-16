@@ -71,10 +71,10 @@ app.controller('PostsCtrl', ['$scope', 'posts', 'post', function($scope, posts, 
 	$scope.test = "this on?";
 	
 	
-	posts.addComment = function(){
+	$scope.addComment = function(){
 		if($scope.body === ''){ return; }		
 		
-		posts.addcomment(post._id,{
+		posts.addComment(post._id,{
 			body: $scope.body,
 			author: 'user',
 			upvotes: 0
