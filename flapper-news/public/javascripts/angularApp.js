@@ -83,6 +83,10 @@ app.controller('PostsCtrl', ['$scope', 'posts', 'post', function($scope, posts, 
 		});		
 		$scope.body = '';
 	};
+	
+	$scope.incrementUpvotes = function(comment){
+		posts.upvoteComment(post, comment);
+	}
 }]);
 
 app.config([
