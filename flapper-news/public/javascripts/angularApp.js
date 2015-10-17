@@ -138,6 +138,10 @@ app.controller('PostsCtrl', ['$scope', 'posts', 'post', function($scope, posts, 
 	}
 }]);
 
+app.controller('AuthCtrl', ['$scope', '$state', 'auth', function($scope, $state, auth){
+	
+}]);
+
 app.config([
 	'$stateProvider',
 	'$urlRouterProvider',
